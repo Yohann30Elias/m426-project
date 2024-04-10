@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tr th:each="film : ${filmlist}">
+
+    <td>
+        <h1 th:text="${film.film_id}"></h1>
+        <p  th:text="${film.title}" ></p>
+    </td>
+
+</tr>
+</body>
+</html>

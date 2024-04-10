@@ -17,7 +17,8 @@ public class Film implements Serializable {
     private String title;
     private String format;
     private String director;
-    private int year_ofProduction;
+    @Column(name = "year_of_production")
+    private Integer yearOfProduction;
     private int duration;
     private String distributor;
 
@@ -53,12 +54,12 @@ public class Film implements Serializable {
         this.director = director;
     }
 
-    public int getYear_ofProduction() {
-        return year_ofProduction;
+    public int getYearOfProduction() {
+        return yearOfProduction;
     }
 
-    public void setYear_ofProduction(int year_ofProduction) {
-        this.year_ofProduction = year_ofProduction;
+    public void setYearOfProduction(int yearOfProduction) {
+        this.yearOfProduction = yearOfProduction;
     }
 
     public int getDuration() {
