@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmFinder Ergebnisse</title>
+    <style>
+
+        :root {
+            --primary-color: #EDC748;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            width: 80%;
+            background-color: var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .search-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-row input[type="text"] {
+            width: 75%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-row button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        .search-row button:hover {
+            background-color: #555;
+        }
+        .filter-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .filter-row select {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .results {
+            margin-top: 20px;
+        }
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+        .result-item .details {
+            width: 70%;
+        }
+        .result-item .actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .result-item button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .result-item button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FilmFinder</h1>
+        <h2>(x) Ergebnisse</h2>
+        <div class="search-container">
+            <div class="search-row">
+                <input type="text" placeholder="Man">
+                <button>Suchen</button>
+            </div>
+            <div class="filter-row">
+                <select>
+                    <option value="">Jahr</option>
+                </select>
+                <select>
+                    <option value="">Regisseur</option>
+                </select>
+                <select>
+                    <option value="">Dauer</option>
+                </select>
+                <select>
+                    <option value="">Format</option>
+                </select>
+                <select>
+                    <option value="">Verleiher</option>
+                </select>
+            </div>
+        </div>
+        <div class="results">
+            <!-- PROVISORISCHER PLATZHALTER, ERGEBNISSE SOLLTEN VON DB ERSCHEINEN-->
+            <div class="result-item">
+                <div class="details">
+                    <strong>Spider-Man</strong><br>
+                    2006 - 1h 45min - 16mm - DVDone - Michael Lincon
+                </div>
+                <div class="actions">
+                    <button>Ausleihen</button>
+                    <button>Letzte Veranstaltungen ➔</button>
+                </div>
+            </div>
+            <div class="result-item">
+                <div class="details">
+                    <strong>Ant-Man</strong><br>
+                    2017 - 2h 14min - 35mm - Film Verleih Gruppe - Jonny Meyer
+                </div>
+                <div class="actions">
+                    <button>Ausleihen</button>
+                    <button>Letzte Veranstaltungen ➔</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
