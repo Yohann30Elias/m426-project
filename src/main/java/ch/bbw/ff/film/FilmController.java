@@ -13,6 +13,7 @@ public class FilmController{
     @Autowired
     private FilmService filmService;
 
+
     @GetMapping("/index")
     public String filmSuchen(Model model){
         model.addAttribute("filmSuchen",filmService.getFilmList());
