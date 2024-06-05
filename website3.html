@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmFinder - Letzte Veranstaltungen</title>
+    <style>
+        :root {
+            --primary-color: #EDC748;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            width: 80%;
+            background-color: var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .events {
+            margin-top: 20px;
+        }
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+        .result-item .details {
+            width: 70%;
+        }
+        .result-item .actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .result-item button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .result-item button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Letzte Veranstaltungen</h1>
+        <div class="events">
+            <div class="result-item">
+                <div class="details">
+                    <strong>Spider-Man</strong><br>
+                    12.6.2023 - 12:00 Uhr UTC +1 - Komplex 4 Raum 3
+                </div>
+                <div class="actions">
+                    <button>mehr Infos</button>
+                </div>
+            </div>
+            <div class="result-item">
+                <div class="details">
+                    <strong>Spider-Man</strong><br>
+                    15.6.2023 - 16:00 Uhr UTC +1 - Komplex 3 Raum 8
+                </div>
+                <div class="actions">
+                    <button>mehr Infos</button>
+                </div>
+            </div>
+            <div class="result-item">
+                <div class="details">
+                    <strong>Spider-Man</strong><br>
+                    29.6.2023 - 20:30 Uhr UTC +1 - Komplex 4 Raum 1
+                </div>
+                <div class="actions">
+                    <button>mehr Infos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
