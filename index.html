@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FilmFinder Ergebnisse</title>
     <style>
-
         :root {
             --primary-color: #EDC748;
         }
@@ -111,28 +110,28 @@
         <h2>(x) Ergebnisse</h2>
         <div class="search-container">
             <div class="search-row">
-                <input type="text" placeholder="Man">
-                <button>Suchen</button>
+                <input type="text" placeholder="Man" id="searchText">
+                <button onclick="search()">Suchen</button>
             </div>
             <div class="filter-row">
-                <select>
+                <select id="jahr">
                     <option value="">Jahr</option>
                 </select>
-                <select>
+                <select id="regisseur">
                     <option value="">Regisseur</option>
                 </select>
-                <select>
+                <select id="dauer">
                     <option value="">Dauer</option>
                 </select>
-                <select>
+                <select id="format">
                     <option value="">Format</option>
                 </select>
-                <select>
+                <select id="verleiher">
                     <option value="">Verleiher</option>
                 </select>
             </div>
         </div>
-        <div class="results">
+        <div class="results" id="results">
             <!-- PROVISORISCHER PLATZHALTER, ERGEBNISSE SOLLTEN VON DB ERSCHEINEN-->
             <div class="result-item">
                 <div class="details">
@@ -156,5 +155,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function search() {
+            const searchText = document.getElementById('searchText').value;
+            const jahr = document.getElementById('jahr').value;
+            const regisseur = document.getElementById('regisseur').value;
+            const dauer = document.getElementById('dauer').value;
+            const format = document.getElementById('format').value;
+            const verleiher = document.getElementById('verleiher').value;
+            
+            console.log({ searchText, jahr, regisseur, dauer, format, verleiher });
+        }
+    </script>
 </body>
 </html>
