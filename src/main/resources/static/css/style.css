@@ -14,9 +14,10 @@ section{
     align-items: center;
     text-align: center;
     border-radius: 15px;
+    margin: 2rem;
 }
 
-section label{
+label{
     font-size: 2rem;
     display: flex;
     justify-content: center;
@@ -33,5 +34,58 @@ input {
 
 h1{
     font-weight: bold;
+}
+
+#andere {
+    padding-top: 1rem;
+
+}
+nobr{
+    padding-left: 1rem;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+/* Custom radio button */
+input[type="radio"] + nobr {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #333;
+}
+
+/* Create a custom radio button */
+input[type="radio"] + nobr:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #2B282C;
+    border-radius: 50%;
+    background: #EDC748;
+}
+
+/* Custom radio button checked state */
+input[type="radio"]:checked + nobr:before {
+    border-color: #2B282C;
+    background: #EDC748;
+}
+
+/* Inner circle for checked state */
+input[type="radio"]:checked + nobr:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #EDC748;
 }
 
