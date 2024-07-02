@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -7,40 +6,34 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
-    <h1>FilmFinder</h1>
-    <h2>Auswahlkriterien</h2>
-    <form>
-      <section>
-        <label for="titel">Titel</label><br>
-        <input type="text" id="titel" name="titel" placeholder="Search..">
-      </section>
-        <section>
-            <label for="jahr">Jahr der Prod.</label><br>
-            <input type="number" id="jahr" name="jahr" placeholder="Jahr">
-        </section>
-        <section>
-            <label>Format</label>
-            <nobr for="16mm">16mm</nobr>
-            <input type="radio" id="16mm" name="format" value="16mm">
-            <nobr for="andere">andere</nobr>
-            <input type="radio" class="and" id="andere" name="format" value="andere">
-            <nobr for="35mm" >35mm</nobr>
-            <input type="radio" id="35mm" name="format" value="35mm">
-        </section>
-        <section>
-            <label for="dauer">Dauer (min.)</label><br>
-            <input type="number" id="dauer" name="dauer" placeholder="Dauer (min.)">
-        </section>
-        <section>
-            <label for="regisseur">Regisseur</label><br>
-            <input type="text" id="regisseur" name="regisseur" placeholder="Name..">
-        </section>
-        <section>
-            <label for="verleiher">Verleiher</label><br>
-            <input type="text" id="verleiher" name="verlheier" placeholder="Name..">
-        </section>
-
-
-    </form>
+<h1>FilmFinder</h1>
+<h2>Auswahlkriterien</h2>
+<form action="/listeFilm" method="GET">
+    <section>
+        <label for="title">Titel</label><br>
+        <input type="text" id="title" name="title" placeholder="Suche nach Titel..">
+    </section>
+    <section>
+        <label for="yearOfProduction">Jahr der Produktion</label><br>
+        <input type="number" id="yearOfProduction" name="yearOfProduction" placeholder="Jahr">
+    </section>
+    <section>
+        <label>Format</label><br>
+        <input type="text" id="format" name="format" placeholder="mm">
+    </section>
+    <section>
+        <label for="duration">Dauer (min.)</label><br>
+        <input type="number" id="duration" name="duration" placeholder="Dauer (min.)">
+    </section>
+    <section>
+        <label for="director">Regisseur</label><br>
+        <input type="text" id="director" name="director" placeholder="Name des Regisseurs..">
+    </section>
+    <section>
+        <label for="distributor">Verleiher</label><br>
+        <input type="text" id="distributor" name="distributor" placeholder="Name des Verleihers..">
+    </section>
+    <button type="submit">Suchen</button>
+</form>
 </body>
 </html>

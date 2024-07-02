@@ -2,16 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>FilmFinder Results</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
-<tr th:each="film : ${filmlist}">
+<div class="container">
+    <h1>FilmFinder</h1>
+    <h2 th:text="${films.size() != 0} ? ${films.size()} + ' Ergebnisse gefunden' : 'no results'"></h2>
 
-    <td>
-        <h1 th:text="${film.film_id}"></h1>
-        <p  th:text="${film.title}" ></p>
-    </td>
 
-</tr>
+    <div class="search-container">
+        <div class="search-row">
+            <input type="text" placeholder="Titel" id="searchText" th:value="${title}">
+            <button onclick="search()">Suchen</button>
+        </div>
+        <div class="filter-row">
+            <input type="text" id="yearOfProduction" placeholder="Jahr" th:value="${yearOfProduction}">
+            <input type="text" id="director" placeholder="Regisseur" th:value="${director}">
+            <input type="text" id="duration" placeholder="Dauer" th:value="${duration}">
+            <input type="text" id="format" placeholder="Format" th:value="${format}">
+            <input type="text" id="distributor" placeholder="Verleiher" th:value="${distributor}">
+        </div>
+    </div>
+    <div class="results" id="results">
+        <div th:each="film : ${films}" class="result-item">
+            <div class="details">
+                <strong th:text="${film.title}"></strong><br>
+                <span th:text="${film.yearOfProduction}"></span> -
+                <span th:text="${film.duration} + ' min'"></span> -
+                <span th:text="${film.format}"></span> -
+                <span th:text="${film.distributor}"></span> -
+                <span th:text="${film.director}"></span>
+            </div>
+            <div class="actions">
+                <button>Ausleihen</button>
+                <button onclick="navigateToEvents()">Letzte Veranstaltungen ➔</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript code to set filter values from URL parameters
+    document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('searchText').value = urlParams.get('title') || '';
+
+        document.getElementById('yearOfProduction').value = urlParams.get('yearOfProduction') || '';
+        document.getElementById('director').value = urlParams.get('director') || '';
+        document.getElementById('duration').value = urlParams.get('duration') || '';
+        document.getElementById('format').value = urlParams.get('format') || '';
+        document.getElementById('distributor').value = urlParams.get('distributor') || '';
+    });
+
+    function search() {
+        const searchText = document.getElementById("searchText").value;
+        const yearOfProduction = document.getElementById("yearOfProduction").value;
+        const director = document.getElementById("director").value;
+        const duration = document.getElementById("duration").value;
+        const format = document.getElementById("format").value;
+        const distributor = document.getElementById("distributor").value;
+
+        let queryString = '';
+        if (searchText) queryString += 'title=' + encodeURIComponent(searchText) + '&';
+        if (yearOfProduction) queryString += 'yearOfProduction=' + encodeURIComponent(yearOfProduction) + '&';
+        if (director) queryString += 'director=' + encodeURIComponent(director) + '&';
+        if (duration) queryString += 'duration=' + encodeURIComponent(duration) + '&';
+        if (format) queryString += 'format=' + encodeURIComponent(format) + '&';
+        if (distributor) queryString += 'distributor=' + encodeURIComponent(distributor) + '&';
+
+        queryString = queryString.slice(0, -1);
+
+        window.location.href = "/listeFilm?" + queryString;
+    }
+    function navigateToEvents() {
+        window.location.href = "/veranstaltungen";
+    }
+</script>
 </body>
 </html>
