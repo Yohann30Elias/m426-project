@@ -28,16 +28,16 @@ public class FilmController {
                            @RequestParam(value = "distributor", required = false) String distributor,
                            Model model) {
 
-        // Initialisieren der Filmliste mit allen Filmen
+
         List<Film> films = (List<Film>) filmService.getFilmList();
 
-        // Filtern nach den einzelnen Suchkriterien, falls angegeben
+
         if (title != null && !title.isEmpty()) {
             films = filmService.findFilmsByTitle(title);
         }
         if (yearOfProduction != null && !yearOfProduction.isEmpty()) {
             List<Film> filteredFilms = filmService.findFilmsByYearOfProduction(yearOfProduction);
-            films.retainAll(filteredFilms); // Behalten nur Filme, die in beiden Listen sind
+            films.retainAll(filteredFilms);
         }
         if (format != null && !format.isEmpty()) {
             List<Film> filteredFilms = filmService.findFilmsByFormat(format);

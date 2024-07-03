@@ -1,4 +1,4 @@
-package ch.bbw.ff;
+package ch.bbw.ff.film;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,5 +1,6 @@
 package ch.bbw.ff;
 
+import ch.bbw.ff.film.FilmAppApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
